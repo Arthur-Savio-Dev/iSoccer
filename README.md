@@ -165,17 +165,17 @@ O sistema irá gerar um relatório geral contendo todos os outros sub-relatório
 |checkExistingFan      | AdminFunctions | Método de adminstração comum torcedores |
 |returnEmployee        | AdminFunctions | Método utilizado por outro método da classe |
 |returnFan             | AdminFunctions | Método utilizado por outro método da classe |
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
+|checkBusAvailable | BusManagement | Consultar dados referente à disponibilidade do ônibus |
+|changeBusExisting | BusManagement | Consultar dados referente à existência do ônibus
+|changeBusAvailability | BusManagement | Mudança nos atributos do ônibus |
+|receiveDatasAndAddEmployeeToSystem | EmployeeAdmin | Receber dados para funcionários |
+|checkTypeEmployeeAndAddToSystem | EmployeeAdmin | Checar o tipo para poder adicionar à lista certa 
+|changeEmployeeSalary | EmployeeAdmin | Método para gerenciar atributo de funcionário |
+|checkExistingAndDeleteEmployee | EmployeeAdmin | Método para gerenciar instância de funcionário
+|searchForResearcherByName | EmployeeAdmin | Método para retornar funcionário | 
+|searchAndReturnPlayerByName | EmployeeAdmin | Método para retornar jogador |
+|deleteEmployee | EmployeeAdmin | Método para gerenciar instância de funcionário |
+|changePlayerAvailability | EmployeeAdmin | Método para gerenciar instância de funcionário |
 |
 |
 |
