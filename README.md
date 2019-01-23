@@ -3,34 +3,34 @@
 ## Funcionalidades
 
 ### Gerenciar Funcionários
-#### O sistema permite que o administrador possa gerenciar os funcionários com os métodos de adicionar e deletar o funcionário ao sistema, alterar o salário de um funcionário, mudar a disponibilidade de um jogador e listar todos os funcionários. 
+O sistema permite que o administrador possa gerenciar os funcionários com os métodos de adicionar e deletar o funcionário ao sistema, alterar o salário de um funcionário, mudar a disponibilidade de um jogador e listar todos os funcionários. 
 
 ### Gerenciar Sócio Torcedores
-#### A gerência dos torcedores permite além das funções básicas de adicionar e deletar ao sistema, listar todos os torcedores,  alterar o tipo de sócio (júnior, sênior, master) e alterar o valor de contribuição dos tipos de sócio.
+A gerência dos torcedores permite além das funções básicas de adicionar e deletar ao sistema, listar todos os torcedores,  alterar o tipo de sócio (júnior, sênior, master) e alterar o valor de contribuição dos tipos de sócio.
 
 ### Gerência de Estádio
-#### O sistema permite a verificação da existência e disponibilidade desse recurso, bem como alterá-las. Poderá ser solicitado informações a respeito dos recursos do estádio e edição da quantidade de banheiros, assentos e lanchonetes. 
+O sistema permite a verificação da existência e disponibilidade desse recurso, bem como alterá-las. Poderá ser solicitado informações a respeito dos recursos do estádio e edição da quantidade de banheiros, assentos e lanchonetes. 
 
 ### Gerência do Ônibus
-#### O sistema irá permitir que a verificação de existência e disponibilidade do recurso. Também será possível alterá-la.
+O sistema irá permitir que a verificação de existência e disponibilidade do recurso. Também será possível alterá-la.
 
 ### Gerência do Centro de Treinamento
-#### Permite a verificação de sua existência e disponibilidade. Além de alterá-las, o sistema possibilita alterar o número de dormitórios. 
+Permite a verificação de sua existência e disponibilidade. Além de alterá-las, o sistema possibilita alterar o número de dormitórios. 
 
 ### Relatório sobre Funcionários
-#### O sistema irá listar todos os funcionários do time, informando seus dados: nome, profissão, e-mail, telefone e, se preciso, dados específicos.
+O sistema irá listar todos os funcionários do time, informando seus dados: nome, profissão, e-mail, telefone e, se preciso, dados específicos.
 
 ### Relatório do Time
-#### O sistema informará o técnico do time seguido da lista de jogadores, se estão aptos a jogar e suas devidas posições.
+O sistema informará o técnico do time seguido da lista de jogadores, se estão aptos a jogar e suas devidas posições.
 
 ### Reatório dos Torcedores
-#### Será informado todos os torcedores, seu tipo e seus detalhes.
+Será informado todos os torcedores, seu tipo e seus detalhes.
 
 ### Relatório dos Recursos Físicos
-#### O sistema irá informar os detalhes sobre os recursos físicos: Estádio, Centro de Treinamento, Ônibus. Suas disponibilidades e existência também serão informados.
+O sistema irá informar os detalhes sobre os recursos físicos: Estádio, Centro de Treinamento, Ônibus. Suas disponibilidades e existência também serão informados.
 
 ### Relatório Geral
-#### O sistema irá gerar um relatório geral contendo todos os outros sub-relatórios. 
+O sistema irá gerar um relatório geral contendo todos os outros sub-relatórios. 
 
 ## Classes
 ### Person
