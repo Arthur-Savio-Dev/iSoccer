@@ -11,6 +11,7 @@
 ## Classes
 ### Person
 > Motivação: Armazenar dados comuns a todos as classes que extendem o tipo pessoa
+
 > Solução: Criar uma classe que tenha atributos comuns à pessoa. Ex: nome, cpf, e-mail.
-> Vantagem: Evitar o uso de duplicação de código. Agora as subclasses apenas armazenam dados 
->           específico.
+
+> Vantagem: Evitar o uso de duplicação de código. Agora as subclasses apenas armazenam dados específico.
