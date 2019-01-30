@@ -12,7 +12,7 @@ A gerência dos torcedores permite além das funções básicas de adicionar e d
 O sistema permite a verificação da existência e disponibilidade desse recurso, bem como alterá-las. Poderá ser solicitado informações a respeito dos recursos do estádio e edição da quantidade de banheiros, assentos e lanchonetes. 
 
 ### Gerência do Ônibus
-O sistema irá permitir que a verificação de existência e disponibilidade do recurso. Também será possível alterá-la.
+O sistema irá permitir a verificação de existência e disponibilidade do recurso. Também será possível alterá-la.
 
 ### Gerência do Centro de Treinamento
 Permite a verificação de sua existência e disponibilidade. Além de alterá-las, o sistema possibilita alterar o número de dormitórios. 
@@ -45,43 +45,48 @@ O sistema irá gerar um relatório geral contendo todos os outros sub-relatório
 
 > Solução: Criar uma nova classe com o tipo exigido.
 
-> Vantagem: Poder armazenar dados específicos utilizando conceitos de POO. Possibilitando maior facilidade
->de manutenção do código e agilidade para encontrar possíveis bugs.
+> Vantagem: Poder armazenar dados específicos utilizando conceitos de POO. Possibilitando maior facilidade de manutenção do código e agilidade para encontrar possíveis bugs.
 
 > Desvantagem: Maior número de classes no sistema. 
 
 ### AdminFunction
-> Motivação: Métodos para consultas gerais entre os tipos que extendem Person (nessa situação, apenas dois: Person e Fan) e >recebimento de dados comuns aos dois
->para adição dos mesmos no sistema.
+> Motivação: Agrupar todos os métodos para consultas gerais e gerenciamento de dados que sejam comuns entre os tipos que extendem Person. 
 
 > Solução: Criada uma classe contendo métodos de consulta(checkExistingEmployee, checkExistingFan), 
->retornos(returnEmployee, returnFan) e método reutilizável para receber dados comuns.
+>retornos(returnEmployee, returnFan) e métodos reutilizáveis para receber dados comuns.
 
 > Vantagem: Classes desse tipo possibilitam menores métodos, melhor manutenção do código, evitam repetição de código.
 >seu atributo é utilizado pela maioria dos métodos da própria classe.
 
-### EmployeeAdmin - FanAdmin
-> Motivação: Organizar os métodos que fazem gerência dos funcionários.
+### EmployeeAdmin
+> Motivação: Organizar os métodos que fazem gerência dos funcionários do time.
 
-> Solução: Criar classes específicas para isso. Seus métodos permitem receber os dados específicos de cada tipo, caso precise, >adicionar, deletar, alterar alguns atributos e alterar estado de alguns tipos.
+> Solução: Criar classe que agrupe os métodos para realizar esta operação. Seus métodos permitem receber os dados específicos de cada tipo de funcionário (caso precise), adicionar, deletar, alterar alguns atributos e alterar estado de alguns tipos.
 
-> Vantagem: Seus atributos são muito usados pelos próprios métodos da classe obedecendo um padrão de Clean Code. Separados em  uma classe específica, sua manutenção é mais fácil. 
+> Vantagem: Seus atributos são muito usados pelo métodos da classe obedecendo um padrão de Clean Code. Separados em  uma classe específica, sua manutenção é mais fácil. 
 
 > Desvantagem: Poderia ser ainda mais refatorado. Alguns métodos são longos.
+
+###  FanAdmin
+> Motivação: Organizar os métodos que gerenciam os sócio torcedores do time.
+
+> Solução: Criar uma classe que contenha os métodos necessários a todos os requisitidos de gerenciamento de um sócio. Lá estão métodos que alteram as contribuições, tipo de torcedor, deleta e adiciona ao sistema.
+
+> Vantagem: Facilitar o uso desses métodos. Desse jeito, eles podem ser facilmente acessados, refatorados e entendidos.
 
 ### BusManagemet - StadiumManagement - TrainingCenterManagement
 > Motivação: Organizar os métodos que fazem gerência dos recursos físicos do time.
 
-> Solução: Classes específicas para tratar os dados dos recursos, como verificar disponibilidade e alterar seu estado.
+> Solução: Classes específicas para tratar os dados dos recursos físicos, como verificar disponibilidade, alterar seu estado e gerenciar os recursos de cada recurso físico, como o número de assentos, no caso do estádio.
 
-> Vantagem: Atributos muito bem usados pelos métodos da própria classe. Facilita manutenção de código.
+> Vantagem: Atributos muito bem usados pelos métodos da própria classe. Facilita manutenção de código e usabilidade.
 
 ### SystemDatas
 > Motivaçao: Armazenar todos os dados do sistema em um único lugar.
 
-> Solução: Criar uma classe com as listas dos funcionários, separados por tipos, sócio torcedores, dados dos recursos físicos.
+> Solução: Criar uma classe que contenha todos os dados do sistema. 
 
-> Vantagem: Atributos acessíveis de um único lugar para evitar que hajam muitas instâncias de classes que possam conter dados em outras classes. Dessa maneira há apenas uma instância.
+> Vantagem: Atributos acessíveis de um único lugar para evitar que hajam muitas classes contendo os dados do sistema, aumentando o número de instâncias nas classes que fossem reutilizá-la. 
 
 ### Bus - TrainingCenter - Stadium
 > Motivação: Representar os recursos como objetos, a fim de ter seus atributos específicos organizados.
@@ -95,67 +100,56 @@ O sistema irá gerar um relatório geral contendo todos os outros sub-relatório
 
 > Solução: Criar uma classe que trate do login com seus métodos.
 
-> Vantagem: Organização.
+> Vantagem: Organização e maior facilidade de manutenção.
 
 ### MainMenu
 > Motivação: Organizar e administrar o menu principal. 
 
-> Solução: Criar uma classe para tratar do switch de controle. Chamando a partir dele os métodos de outras classes.
+> Solução: Criar uma classe para tratar do switch de controle, chamando a partir dele os métodos de outras classes.
 
-> Vantagem: Organização.
-
-> Desvantagem: Sem o print do menu por perto, fica pouco complicado o que significa cada case. Mas os nomes dos métodos podem ajudar.
+> Vantagem: Os métodos de outras classes podem ser acessados a partir de um único método de gerência do menu, facilitando a manutenção e usabilidade.
 
 ### ReportsMenu
 > Motivação: Manter a gerência dos relatórios em um só lugar.
 
-> Solução: Criar uma classe para administrar a demanda dos relatórios atraveś de um menu e métodos.
+> Solução: Criar uma classe para administrar a demanda dos relatórios atraveś de um menu. 
 
-> Vantagem: Organização.
-
-> Desvantagem: Repetição de prints e métodos de controle na mesma classe que a de gerênciar o menu.
+> Vantagem: A classe possui todos os métodos necessários para emitir relatórios.
 
 ### BusManagementMenu - StadiumManagementMenu - TrainingCenterManagementMenu
-> Motivação: Criar um menu para administrar recrusos e disponibilidades dos recursos físicos do time.
+> Motivação: Ter um menu para administrar os recursos físicos.
 
 > Solução: Criar uma classe para cada recurso físico, contendo o menu de gerência para cada um. 
 
-> Vantagem: Organização.
+> Vantagem: Separar a gerência dos recursos físicos do menu principal facilita o uso do sistema, manutenção do código.
 
 ### EmployeeMenu
-> Motivação: Criar um menu que pudesse gerenciar todas as funcionalidades de adminstração dos funcionários.
+> Motivação: Gerenciar os métodos que fazem a gerência dos funcionários.
 
-> Solução: Uma classe contendo o switch de controle das funcionalidades. 
+> Solução: Uma classe contendo o switch de controle das funcionalidades que gerenciam os funcionários. 
 
 > Vantagem: Todos os atributos são utilizados pelo método. Organização de código.
 
 ### FanMenu
-> Motivação: Criar um menu que pudesse gerenciar todas as funcionalidades de adminstração dos sócio torcedores.
+> Motivação: Gerenciar os métodos que fazem a gerência dos sócio torcedores.
 
-> Solução: Uma classe contendo o switch de controle das funcionalidades. 
+> Solução: Uma classe contendo o switch de controle das funcionalidades que gerenciam os sócio torcedores. 
 
 > Vantagem: Todos os atributos são utilizados pelo método. Organização de código.
 
-### PrintEmployees
-> Motivação: Organizar em um único lugar os métodos de print dos funcionários.
+### PrintEmployees - PrintFans
+> Motivação: Organizar em um único lugar os métodos de print dos funcionários/sócio torcedores.
 
-> Solução: Criar uma classe que cotenha todos os métodos úteis para prints. Métodos para printar todos, específicos, detalhes dos >funcionários.
+> Solução: Criar uma classe que cotenha todos os métodos úteis para prints. Métodos para printar todos os detalhes, detalhes específicos.
 
-> Vantagem: Organização.
-
-### PrintFans
-> Motivação: Organizar em um único lugar os métodos de print dos sócio torcedores.
-
-> Solução: Criar uma classe com os métodos úteis para os prints dos relatórios sobre os torcedores. 
-
-> Vantagem: Organização.
+> Vantagem: Desafoga a responsabilidade de outras classes que por acaso tivessem de utilizar desses prints. Organizado numa classe só, a facilidade de uso e manutenção são maiores.
 
 ### PrintMenus
-> Motivação: Separar os prints das classes de controle para facilitar o uso e manutenção.
+> Motivação: Agregar em um único lugar os prints dos menus.
 
 > Solução: Criar uma classe que contenha os métodos de prints para cada menu do sistema. 
 
-> Vantagem: Organização e melhori na manutenção.
+> Vantagem: Organização e melhoria na manutenção.
 
 ## Distribuição dos Métodos
 |Método                |Classe                     |Motivo da distruibuição                 |
@@ -199,7 +193,32 @@ O sistema irá gerar um relatório geral contendo todos os outros sub-relatório
 |
 
 ## Tratamento de Exceções
-* Try/Catch: InputMismatchException, NullPointerException.
+* Try/Catch: Uso principal para captar erros quando o usuário informar valores diferentes do esperado para uma determinada entrada. 
+Ex:
+```java
+// Exemplo do uso do Try/Catch com a exceção InputMismatchExeption
+
+System.out.println("Selecione o tipo: ");
+            System.out.println("1 - Júnior, 2 - Sênior, 3 - Elite");
+            try{
+                type = scanner.nextInt();
+                break;
+            }catch (InputMismatchException e){
+                System.out.println("ERRO. Informe apenas números. ");
+}
+```
+Também utilizado quando tentar acessar objetos nulos.
+Ex:
+```java
+// Exemplo do uso do Try/Catch com a exceção NullPointerException
+
+try{
+      printEmployees.printEmployeeDetails(systemDatas.getTechinician());
+    }catch (NullPointerException e){
+      System.out.println("Não existe um técnico cadastrado.");
+}
+```
+
 
 ## Herança e Extensibilidade
 > Motivação: Utilizar os conceitos de POO e permitir que novos tipos possam ser criados, se adaptando ao sistema. 
