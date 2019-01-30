@@ -170,27 +170,15 @@ O sistema irá gerar um relatório geral contendo todos os outros sub-relatório
 |searchAndReturnPlayerByName | EmployeeAdmin | Método para retornar jogador |
 |deleteEmployee | EmployeeAdmin | Método para gerenciar instância de funcionário |
 |changePlayerAvailability | EmployeeAdmin | Método para gerenciar instância de funcionário |
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
+|receieveDatasAndAddFanToSystem | FanAdmin | Por realizar operações com os dados do torcedor |
+|choiceFanType | FanAdmin | Permite alterar um atributo do torcedor |
+|changeRateOfAllFanTypes | FanAdmin | Permite alterar um atributo do torcedor | 
+|changeJuniorRate | FanAdmin | Por permitir alterar a taxa de contribuição de um tipo de torcedor |
+|changeSeniorRate | FanAdmin | Por permitir alterar a taxa de contribuição de um tipo de torcedor |
+|changeEliteRate | FanAdmin | Por permitir alterar a taxa de contribuição de um tipo de torcedor |
+|deleteFan | FanAdmin | Por manipular objetos do tipo torcedor |
+|changeResourcesStadiumNumber | StadiumManagement | Por permitir manipular os recursos do estádio |  
+
 
 ## Tratamento de Exceções
 * Try/Catch: Uso principal para captar erros quando o usuário informar valores diferentes do esperado para uma determinada entrada. 
