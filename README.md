@@ -220,9 +220,102 @@ try{
 ```
 
 
-## Herança e Extensibilidade
+## Herança
 > Motivação: Utilizar os conceitos de POO e permitir que novos tipos possam ser criados, se adaptando ao sistema. 
 
 > Solução: Criar uma Classe Person, contendo os atributos comuns aos tipos e extender ela às várias subclasses. 
 
-> Vantagem: Organização.
+> Vantagem: Organização e melhor facilidade de manutenção.
+
+Ex: 
+```java
+
+// Exemplo do uso de Herança e como ela facilita a manutenção do sistema.
+//Note que a subclasse apenas armazena o dados específico para o médico. 
+
+package br.com.ufal.iSoccer.persons;
+
+public class Doctor extends Person{
+    private String crm;
+
+    public Doctor(String name, String cpf, String tel, String email, double salary, String type,
+                  String crm) {
+        super(name, cpf, tel, email, salary, type);
+        this.crm = crm;
+    }
+
+    public String getCrm() {
+        return crm;
+    }
+
+    public void setCrm(String crm) {
+        this.crm = crm;
+    }
+}
+```
+
+
+```java
+package br.com.ufal.iSoccer.persons;
+
+public class Driver extends Person{
+    private String enabling;
+
+    public Driver(String name, String cpf, String tel, String email, double salary, String type,
+                  String enabling) {
+        super(name, cpf, tel, email, salary, type);
+        this.enabling = enabling;
+    }
+
+    public String getEnabling() {
+        return enabling;
+    }
+
+    public void setEnabling(String enabling) {
+        this.enabling = enabling;
+    }
+}
+```
+## Extensibilidade
+> O sistema possui uma extensibilidade das classes: SystemDatas, Person, EmployeeAdmin. Segue os exemplos de alguns trechos onde ocorreram essa extensibilidade.
+
+```java
+public boolean checkExistingEmployee(String name){
+        for(Person i: systemDatas.getAllEmployees()){
+            if(i.getName().equals(name)){
+                return true;
+            }
+        }
+        return false;
+    }
+```
+
+```java
+
+    public boolean checkExistingFan(String name){
+        for(Person i: systemDatas.getFans()){
+            if(i.getName().equals(name)){
+                return true;
+            }
+        }
+        return false;
+    }
+```
+
+
+```java
+switch (option){
+                    case 1:
+                        printEmployees.printJustEmployeeNameAndType();
+                        break;
+                    case 2:
+                        employeeAdmin.checkExistingAndDeleteEmployee();
+                        break;
+                    case 3:
+                        employeeAdmin.changeEmployeeSalary();
+                        break;
+                    case 4:
+                        employeeAdmin.changePlayerAvailability();
+                        break;
+}
+```
